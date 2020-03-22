@@ -1,1 +1,76 @@
-<h1>Miniframework está funcionando!</h1>
+<div class="jumbotron text-center">
+  <h1>My First Bootstrap Page</h1>
+  <p>Resize this responsive page to see the effect!</p>
+</div>
+
+<div class="container">
+  <div class="row">
+	<div class="col-md-4 col-sm-2">
+	  <div class="card">
+	  	<div class="card-header text-center  text-white bg-primary">
+	  		<h1>Empresa</h1>
+	  	</div>
+	  	<div class="card-body text-center">
+	  		<h2><a href="#" class="text-dark">Cadastre-se aqui</a></h2>
+	  	</div>
+	  </div>
+	</div>
+	<div class="col-md-4 col-sm-8">
+		<div class="card">
+			<div class="card-header text-center text-white bg-success">
+				<h1>Login</h1>
+			</div>
+			<div class="card-body">
+			  	<form action="/autenticar" class="needs-validation" method="post" novalidate>
+				  <div class="form-group">
+					<label for="email">Email:</label>
+					<input type="email" class="form-control" placeholder="Enter email" id="email" required>
+					<div class="valid-feedback">Valid.</div>
+		    		<div class="invalid-feedback">Please fill out this field.</div>
+				  </div>
+				  <div class="form-group">
+					<label for="pwd">Senha:</label>
+					<input type="password" class="form-control" placeholder="Enter password" id="pwd" required>
+					<div class="valid-feedback">Valid.</div>
+		    		<div class="invalid-feedback">Please fill out this field.</div>
+				  </div>
+				  <div class="form-group">
+					<a href="#">Esqueci minnha senha</a>
+				  </div>
+				  <button type="submit" class="btn btn-primary">Aceder</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4 col-sm-2 text-center">
+	  <div class="card">
+	  	<div class="card-header text-center">
+	  		<h1>Aluno</h1>
+	  	</div>
+	  	<div class="card-body text-center">
+	  		<h2><a href="/inscreverse" class="text-dark">Cadastre-se aqui</a></h2>
+	  	</div>
+	  </div>
+	</div>
+  </div>
+</div>
+<script>
+// Disable form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Get the forms we want to add validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>

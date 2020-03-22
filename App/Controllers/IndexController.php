@@ -13,6 +13,17 @@ class IndexController extends Action {
 		$this->render('index');
 	}
 
+	public function inscreverse(){
+		$this->view->usuario = array(
+			'nome' => '',
+			'cpf' => '',
+			'email' => '',
+			'senha' => ''
+		);
+		$this->view->erroCadastro = false;
+		$this->render('inscreverse');
+	}
+
 }
 
 
