@@ -1,0 +1,133 @@
+<div class="jumbotron container">
+	<div class="d-flex justify-content-center mt-5">
+		<div class="card" style="width: 90rem;">
+			<div class="card-body" style="padding: 3em">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs">
+					<li class="nav-item">
+						<a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#menu1">Menu 1</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#menu2">Menu 2</a>
+					</li>
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div class="tab-pane container active" id="home">a...</div>
+					<div class="tab-pane container fade" id="menu1">b...</div>
+					<div class="tab-pane container fade" id="menu2">c...</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<h2 class="text-center mb-5">Cadastre seu imóvel</h2>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col">
+						<form id="cadastroImovel" name="cadastroImovel" action="/registrarImovel" method="post">
+							<div class="form-group">
+								<label for="tipoImovel" class="text-break">Tipo do imóvel sadsadas dsadasd sadasd </label>
+								<select name="tipoImovel" class="form-control" id="tipoImovel">
+									<option>Apartamento</option>
+									<option>Casa</option>
+									<option>Terreno</option>
+								</select>
+							</div>
+
+							<div class="form-group">
+								<label for="cep">CEP</label>
+								<input type="text" id="cep" name="cep" class="form-control" placeholder="Ex.: 00000-000" required>
+							</div>
+
+							<div class="form-group">
+								<label for="uf">Estado</label>
+								<select class="form-control" id="uf">
+									<option  value="" id="uf" name="uf" ></option>
+								</select>
+							</div>
+
+							<div class="form-group">
+								<label for="cidade">Cidade</label>
+								<select name="cidade" class="form-control" id="cidade"></select>
+							</div>
+
+							<div class="form-group">
+								<label for="endereco">Endereço</label>
+								<input id="endereco" name="endereco" class="form-control" placeholder="Ex.: Rua Mont Alverne" required>
+							</div>
+
+							<div class="form-group">
+								<label for="numero">Número</label>
+								<input name="numero" class="form-control" id="numero" placeholder="1234">
+							</div>
+
+							<div class="form-group">
+								<label  for="bairro">Bairro</label>
+								<input name="bairro" class="form-control" id="bairro" required>
+							</div>
+						</div>
+
+						<div class="col">
+							<div class="form-group">
+								<label for="areaUtil">Área útil</label>
+								<input name="areaUtil" class="form-control" id="areaUtil" placeholder="m²" required>
+							</div>
+
+							<div class="form-group">
+								<label for="areaTotal">Área total</label>
+								<input name="areaTotal" class="form-control" id="areaTotal" placeholder="m²" required>
+							</div>
+
+							<div class="form-group">
+								<label for="tNegocio">Tipo de Negócio</label>
+								<select name="tipoNegocio" class="form-control" id="tNegocio">
+									<option>Aluguel</option>
+									<option>Venda</option>
+									<option>Temporada</option>
+								</select>
+							</div>
+
+							<div class="form-group">
+								<label for="quartos">Quartos</label>
+								<select name="quartos" class="col-lg-3 form-control" id="quartos">
+									<option>0</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+								</select>
+							</div>
+
+							<div class="form-group">
+								<div class="custom-control custom-switch">
+									<input type="checkbox" class="custom-control-input" id="switch1">
+									<label class="custom-control-label" for="switch1">Toggle me</label>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="areaTexto">Descrição do Imóvel</label>
+								<textarea name="descricao" class="form-control" id="areaTexto" rows="3"></textarea>
+							</div>
+						</div>
+					</div>
+
+					<button type="submit" class="btn btn-warning btn-block mt-5">Cadastrar Imóvel</button>
+					<?php if($this->view->erroCadastro) { ?>
+						<small class="form-text text-danger">*Erro ao tentar realizar o cadastro, verifique se os campos foram preenchidos corretamente</small>
+					<?php } ?>
+				</form>
+			</div>
+		</div>
+
+	</div>
+</div>
+</div>
+</div>

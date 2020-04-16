@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="d-flex justify-content-center mt-5">
+    <div class="card" style="width: 40rem; margin-top: 3em">
+      <div class="card-body">
+
+        
+
+        <div class="row">
+          <div class="col">
+            <h2 class="text-center mb-4">Crie sua conta</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            
+            <form data-toggle="validator" role="form" action="/registrarAluno" method="post">
+              <div class="form-group has-success">
+                <label for="nome" class="control-label">Nome:</label>
+                <input id="nome" type="text" value="<?= $this->view->usuario['nome'] ?>" name="nome" class="form-control" placeholder="Nome" data-error="Por favor, preencha este campo." required>
+                <small><div class="help-block with-errors"></div></small>
+              </div>
+
+              <div class="form-group has-warning">
+                <label for="cpf" class="control-label has-success">CPF:</label>
+                <input id="cpf" type="text" value="<?= $this->view->usuario['cpf'] ?>" name="cpf" class="form-control" data-minlength="14" placeholder="CPF" onkeypress="$(this).mask('000.000.000-00')" required data-error="Por favor, preencha este campo corretamente.">
+                <small><div class="help-block with-errors"></div></small>
+              </div>
+              
+              <div class="form-group has-error">
+                <label for="email">Email:</label>
+                <input type="email" value="<?= $this->view->usuario['email'] ?>"name="email" class="form-control" placeholder="E-mail" id="email" required>
+                <small><div class="help-block with-errors"></div></small>
+              </div>
+
+              <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input id="senha" type="password" value="<?= $this->view->usuario['senha'] ?>" name="senha" class="form-control" placeholder="Senha" data-minlength="6" required>
+                <small><div class="help-block">Mínimo 6 caracteres.</div></small>
+              </div>
+              <div class="form-group">
+                <label for="senha2">Confirmar senha:</label>
+                <input id="senha2" type="password" value="<?= $this->view->usuario['senha'] ?>" name="senha2" class="form-control" placeholder="Confirmar senha" data-match-error="Whoops, these don't match" data-match="#senha" required>
+                <small><div class="help-block with-errors"></div></small>
+              </div>
+              <div class="has-error">
+              
+              <div class="mt-4 mb-4">
+                <small class="form-text">
+                  Ao inscrever-se, você concorda com os Termos de Serviço e com as Políticas de Privacidade, incluindo o Uso de Cookies. Outras pessoas poderão encontrar você pelo e-mail ou número de telefone fornecido · Opções de Privacidade
+                </small>
+              </div>
+              <button type="submit" class="btn btn-warning btn-block">Inscrever-se</button>
+              <?php if($this->view->erroCadastro) { ?>
+                <small class="form-text text-danger">*Erro ao tentar realizar o cadastro, verifique se os campos foram preenchidos corretamente</small>
+              <?php } ?>
+            </form>
+            <script>
+              //$('#form').validator()
+              //bootstrapValidate('#nome','min:5:Mínimo 5 caracteres.')
+              //bootstrapValidate('#cpf','min:14:')
+              //bootstrapValidate('#email','email:Entre com um email válido')
+              //bootstrapValidate('#senha2','matches:#senha:Sua senha deve ser a mesma')
+            </script>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
