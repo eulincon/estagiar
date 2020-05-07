@@ -3,17 +3,17 @@
     <div class="card" style="width: 40rem; margin-top: 3em">
       <div class="card-body">
 
-        
+
 
         <div class="row">
           <div class="col">
-            <h2 class="text-center mb-4">Crie sua conta</h2>
+            <h2 class="text-center mb-4">Crie sua conta!</h2>
           </div>
         </div>
 
         <div class="row">
           <div class="col">
-            
+
             <form data-toggle="validator" role="form" action="/registrarAluno" method="post">
               <div class="form-group has-success">
                 <label for="nome" class="control-label">Nome:</label>
@@ -26,7 +26,7 @@
                 <input id="cpf" type="text" value="<?= $this->view->usuario['cpf'] ?>" name="cpf" class="form-control" data-minlength="14" placeholder="CPF" onkeypress="$(this).mask('000.000.000-00')" required data-error="Por favor, preencha este campo corretamente.">
                 <small><div class="help-block with-errors"></div></small>
               </div>
-              
+
               <div class="form-group has-error">
                 <label for="email">Email:</label>
                 <input type="email" value="<?= $this->view->usuario['email'] ?>"name="email" class="form-control" placeholder="E-mail" id="email" required>
@@ -44,7 +44,7 @@
                 <small><div class="help-block with-errors"></div></small>
               </div>
               <div class="has-error">
-              
+
               <div class="mt-4 mb-4">
                 <small class="form-text">
                   Ao inscrever-se, você concorda com os Termos de Serviço e com as Políticas de Privacidade, incluindo o Uso de Cookies. Outras pessoas poderão encontrar você pelo e-mail ou número de telefone fornecido · Opções de Privacidade
