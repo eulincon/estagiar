@@ -9,6 +9,8 @@ use MF\Model\Container;
 class IndexController extends Action {
 
 	public function teste() {
+		//print_r($_POST);
+		//$this->view->dados = $_POST['']
 		$this->render('teste');
 	}
 
