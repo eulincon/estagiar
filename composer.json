@@ -1,12 +1,12 @@
 {
-	"name": "miniframework",
+	"name": "mf/estagiar",
 	"require": {
 		"php": ">= 7.0"
 	},
 	"authors": [
 		{
-			"name": "Jorge Sant Ana",
-			"email": "jorge@teste.com.br"
+			"name": "Lincon Brito Silva",
+			"email": "linconsilva08@gmail.com"
 		}
 	],
 	"autoload": {
@@ -14,5 +14,7 @@
 			"App\\": "App/",
 			"MF\\": "vendor/MF/"
 		}
-	}
+	},
+	"license": "proprietary",
+	"description": "no description"
 }
