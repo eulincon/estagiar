@@ -3,151 +3,223 @@
 		<div class="card" style="width: 90rem;">
 			<div class="card-body" style="padding: 3em">
 				<!-- Nav tabs -->
-				<ul class="nav nav-tabs">
+				<ul class="nav nav-tabs nav-justified">
 					<li class="nav-item">
-						<a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+						<a class="nav-link active" id="a1" data-toggle="tab" href="#home" style="color: inherit;">Dados pessoais</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" data-toggle="tab" href="#menu1">Menu 1</a>
+						<a class="nav-link" id="a2" data-toggle="tab" href="#menu1"style="color: inherit;">Formação acadêmica</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" data-toggle="tab" href="#menu2">Menu 2</a>
+						<a class="nav-link" id="a3" data-toggle="tab" href="#menu2" style="color: inherit;">Histórico profssional</a>
 					</li>
 				</ul>
 
 				<!-- Tab panes -->
-				<form data-toggle="validator" role="form" method="post" action="/teste">
+				<form method="post" id="curriculo" action="/teste">
 				<div class="tab-content">
 					<div class="tab-pane container active" id="home">
+            <div class="jumbotron" style="margin-top: 1cm; padding: 1cm">
+              <div class="row">
+  						<div class="col form-group">
+    					    <label class="control-label" for="telefone">Telefone:</label>
+    				      <input type="phone" class="form-control" id="telefone" placeholder="(88) 99999-9999">
+    					  </div>
+    						<div class="col form-group">
+    							<label for="cep" class="control-label has-success">CEP:</label>
+    							<input type="text" id="cep" data-minlength="9" onkeypress="$(this).mask('00000-000')" name="cep" class="form-control" placeholder="Ex.: 00000-000">
+    						</div>
+              </div>
+              <div class="row">
+    						<div class="col form-group">
+  								<label for="uf">Estado:</label>
+  								<select class="form-control uf" id="uf"></select>
+  							</div>
 
-						<div class="form-group">
-					    <label class="control-label" for="telefone">Telefone:</label>
-				      <input type="phone" class="form-control" id="telefone" placeholder="(88) 99999-9999">
-					  </div>
-
-						<div class="form-group">
-							<label for="cep" class="control-label has-success">CEP</label>
-							<input type="text" id="cep" data-minlength="9" onkeypress="$(this).mask('00000-000')" name="cep" class="form-control" placeholder="Ex.: 00000-000" data-error="Por favor, preencha este campo corretamente." required>
-							<small class="text-danger"><div class="help-block with-errors"></div></small>
-						</div>
-
-						<div class="form-group">
-								<label for="uf">Estado</label>
-								<select class="form-control" id="uf">
-									<option  value="" id="uf" name="uf" ></option>
-								</select>
-							</div>
-
-							<div class="form-group">
-								<label for="cidade">Cidade</label>
-								<select name="cidade" class="form-control" id="cidade"></select>
-							</div>
-
+  							<div class="col form-group">
+  								<label for="cidade">Cidade:</label>
+  								<select name="cidade" class="form-control cidade" id="cidade"></select>
+  							</div>
+              </div>
 							<div class="form-group">
                 <label for="endereco">Endereço</label>
                  <input id="endereco" name="endereco" class="form-control" placeholder="Ex.: Rua Mont Alverne" required>
               </div>
-
-              <div class="form-group">
-                  <label for="numero">Número</label>
-                  <input name="numero" class="form-control col-lg-3" id="numero" placeholder="1234">
+              <div class="row">
+                <div class="col form-group">
+                    <label for="numero">Número:</label>
+                    <input name="numero" class="form-control" id="numero" placeholder="1234">
+                </div>
+                <div class="col form-group">
+                    <label for="bairro">Bairro:</label>
+                    <input name="bairro" class="form-control" id="bairro" required>
+                </div>
               </div>
+					  </div>
+          </div>
+  				<div class="tab-pane container fade" id="menu1">
+            <div class="jumbotron" style="margin-top: 1cm; padding: 1cm">
               <div class="form-group">
-                  <label for="bairro">Bairro</label>
-                  <input name="bairro" class="form-control col-lg-4" id="bairro" required>
+                <label for="instituicao">Instituição de Ensino</label>
+                <input type="text" class="form-control" id="instituicao">
               </div>
-					</div>
-					<div class="tab-pane container fade" id="menu1">
+              <div class="row">
+                <div class="col form-group">
+                    <label for="uf">Estado:</label>
+                    <select class="form-control uf" id="uf1"></select>
+                  </div>
 
+                  <div class="col form-group">
+                    <label for="cidade">Cidade:</label>
+                    <select name="cidade" class="form-control cidade" id="cidade1"></select>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col form-group">
+                  <label for="curso">Curso</label>
+                  <input type="text" id="curso" class="form-control">
+                </div>
+                <div class="col form-group">
+                  <label for="nivel_curso">Nível</label>
+                  <select id="nivel_curso" class="form-control">
+                    <option selected value="0">Nível de curso</option>
+                    <option value="0">Superior Incompleto</option>
+                    <option value="1">Superior Completo</option>
+                    <option value="2">Técnico</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col form-group">
+                  <label for="data_inicio">Data de Início</label>
+                  <input type="date" id="data_inicio" class="form-control">
+                </div>
+                <div class="col">
+                  <label for="data_termino">Data de Término</label>
+                  <input type="date" id="data_termino" class="form-control">
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="cursando" value="1">
+                  <label class="form-check-label" for="cursando">Cursando</label>
+                </div>
+              </div>
+              <hr>
+              <button class="btn btn-primary">Adicionar Curso</button>
+            </div> 
+          
+            <hr>            
 
+            <div class="jumbotron" style="padding: 1cm">
+              <div class="row">
+                <div class=" col form-group">
+                  <label for="idioma">Idioma</label>
+                  <select id="idioma" class="form-control">
+                    <option selected value="">Idioma</option>
+                    <option value="0">Inglês</option>
+                    <option value="1">Espanhol</option>
+                    <option value="2">Francês</option>
+                  </select>
+                </div>
+                <div class="col form-group">
+                  <label for="nivel">Nível</label>
+                  <select id="nivel_fala" class="form-control">
+                    <option selected value="">Nível</option>
+                    <option value="0">Básico</option>
+                    <option value="1">Médio</option>
+                    <option value="2">Avançado</option>
+                  </select>
+                </div>
+              </div>
+              <button class="btn btn-primary">Adicionar Idioma</button>
+            </div>
 					</div>
 					<div class="tab-pane container fade" id="menu2">
-						<button type="submit" class="btn btn-warning btn-block mt-5">Cadastrar Imóvel</button>
+            <div class="jumbotron" style="margin-top: 1cm; margin-bottom: 1cm">
+              <div class="row">
+                <div class="col form-group">
+                  <label for="cargo">Título do cargo:</label>
+                  <input type="text" class="form-control" id="cargo">
+                </div>
+                <div class="col form-group">
+                  <label for="empregador">Empregador:</label>
+                  <input type="text" class="form-control" id="empregador">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col form-group">
+                    <label for="uf">Estado:</label>
+                    <select class="form-control uf" id="uf2"></select>
+                  </div>
+
+                  <div class="col form-group">
+                    <label for="cidade">Cidade:</label>
+                    <select name="cidade" class="form-control cidade" id="cidade2"></select>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col form-group">
+                  <label for="data_inicio_cargo">Data de Início</label>
+                  <input type="date" id="data_inicio_cargo" class="form-control">
+                </div>
+                <div class="col">
+                  <label for="data_termino_cargo">Data de Término</label>
+                  <input type="date" id="data_termino_cargo" class="form-control">
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="trabalhando" value="1">
+                  <label class="form-check-label" for="cursando">Eu trabalho aqui no momento</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="resumo_carreira">Resuma sua carreira profissional:</label>
+                <textarea id="resumo_carreira" class="form-control" rows="3"></textarea>
+              </div>
+            </div>
+						<button type="submit" class="btn btn-warning btn-block mt-5">Cadastrar Currículo</button>
 					</div>
 				</div>
 				</form>
 			</div>
 		</div>
-
 	</div>
 </div>
-<script type="text/javascript">              
-  $.getJSON('http://mendesepereira.neuroteks.com/entrevista/estados_cidades.json', function (data) {
-    var items = [];
-    var options = '<option value="">escolha um estado</option>';
-    $.each(data, function (key, val) {
-      options += '<option value="' + val.sigla + '">' + val.nome + '</option>';
-    });         
-    $("#uf").html(options);       
-    $("#uf").change(function () {      
-      var options_cidades = '';
-      var str = "";         
-      $("#uf option:selected").each(function () {
-        str += $(this).text();
-      });
-      $.each(data, function (key, val) {
-        if(val.nome == str) {             
-          $.each(val.cidades, function (key_city, val_city) {
-            options_cidades += '<option value="' + val_city + '">' + val_city + '</option>';                
-          });         
-        }
-      });
-      $("#cidade").html(options_cidades);
-    }).change();
-    //$("#cidade").val($("#cidade"))
-  });
-</script>
 <script type="text/javascript">
-  $('#cep').mask('00000-000');
-  $('#cpf').mask('000.000.000-00', {reverse: true});
-  $('#cnpj').mask('00.000.000/0000-00', {reverse: true});
+    $(document).ready(function(){
 
-  $("#cep").focusout(function(){
-  //Início do Comando AJAX
-  $.ajax({
-    //O campo URL diz o caminho de onde virá os dados
-    //É importante concatenar o valor digitado no CEP
-    url: 'https://viacep.com.br/ws/'+$(this).val()+'/json/unicode/',
-    //Aqui você deve preencher o tipo de dados que será lido,
-    //no caso, estamos lendo JSON.
-    dataType: 'json',
-    //SUCESS é referente a função que será executada caso
-    //ele consiga ler a fonte de dados com sucesso.
-    //O parâmetro dentro da função se refere ao nome da variável
-    //que você vai dar para ler esse objeto.
-    success: function(resposta){
-      //Agora basta definir os valores que você deseja preencher
-      //automaticamente nos campos acima.
-      $("#endereco").val(resposta.logradouro);
-      //$("#complemento").val(resposta.complemento);
-      $("#bairro").val(resposta.bairro);
-      $("#uf").val(resposta.uf);
-      $("#uf").change(function () {      
-      var options_cidades = '';
-      var str = "";         
-      $("#uf option:selected").each(function () {
-        str += $(this).text();
-      });
-      $.each(data, function (key, val) {
-        if(val.nome == str) {             
-          $.each(val.cidades, function (key_city, val_city) {
-            options_cidades += '<option value="' + val_city + '">' + val_city + '</option>';                
-          });         
+      $('#a1').tab('show')
+
+
+      $.validator.setDefaults({
+        errorClass: 'text-danger',
+        highlight: function(element){
+          $(element)
+          .addClass('is-invalid')
+        },
+        unhighlight: function(element){
+          $(element)
+          .removeClass('is-invalid')
+          //.addClass('is-valid')
         }
-      });
-      alert(resposta.localidade)
-      $("#cidade").html(options_cidades);
-      }).change(function(){
-        $('#cidade').val(resposta.localidade)
       })
 
-      alert(resposta.localidade)
-      console.log(resposta.localidade)
-      //tentar o document.getElementById('cidade').value = resposta.localidade
-      //Vamos incluir para que o Número seja focado automaticamente
-      //melhorando a experiência do usuário
-      $("#numero").focus();
-    }
-  });
-});
-</script>
+      $('#formulario').validate({
+        rules:{
+          email: {
+            required: true
+          },
+          cidade: {
+            required: true,
+            minlength: 10
+          },
+          pwd: {required: true},
+          endereco: {required: true},
+          gridCheck: {required: true},
+          zip: {required: true},
+          uf: {required: true}
+        },
+        submitHandler: function(form){
+          alert('Sucesso')
+        }
+      })
+    })
+  </script>

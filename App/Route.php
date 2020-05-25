@@ -56,6 +56,12 @@ class Route extends Bootstrap {
 			'action' => 'teste'
 		);
 
+		$routes['testeAuth'] = array(
+			'route' => '/testeAuthAjax',
+			'controller' => 'AuthController',
+			'action' => 'testeAuthAjax'
+		);
+
 		$this->setRoutes($routes);
 	}
 

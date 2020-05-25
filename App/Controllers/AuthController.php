@@ -32,6 +32,10 @@ class AuthController extends Action {
 		print_r($_POST);
 		echo "estou aaqui";
 	}
+
+	public function testeAuthAjax(){
+		print("Requisição ajax tuma nu cu porra!");
+	}
 }
 
 

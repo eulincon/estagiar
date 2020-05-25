@@ -21,7 +21,7 @@
 				<h1>Login</h1>
 			</div>
 			<div class="card-body">
-			  	<form action="/autenticar" method="post">
+			  	<form action="" method="post">
 				  <div class="form-group">
 					<label for="email">Email:</label>
 					<input type="email" name="email" class="form-control" placeholder="Enter email" id="email" required>
@@ -33,7 +33,7 @@
 				  <div class="form-group">
 					<a href="#">Esqueci minnha senha</a>
 				  </div>
-				  <button type="submit" class="btn btn-primary">Aceder</button>
+				  <button id="btn_aceder" type="submit" class="btn btn-primary">Aceder</button>
 				  <?php if($this->view->login == 'erro') {?>
 	              <div class="row">
 	                <div class="col">
@@ -57,3 +57,21 @@
 	</div>
   </div>
 </div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#btn_aceder').on('click', function(){{
+		    $.ajax({
+		      type: 'GET',
+		      url: 'testeAuthAjax',
+		      dataType: 'json',
+		      data: 'sdfds',
+		      success: (dado)=>{
+		      	console.log(dado)
+		      },
+		      error: (e)=>{
+		        console.log(e.responseText)
+		      }
+		    })
+		  }})
+	})
+</script>
