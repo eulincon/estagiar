@@ -1,225 +1,215 @@
-<div class="jumbotron container">
-	<div class="d-flex justify-content-center mt-5">
-		<div class="card" style="width: 90rem;">
-			<div class="card-body" style="padding: 3em">
-				<!-- Nav tabs -->
-				<ul class="nav nav-tabs nav-justified">
-					<li class="nav-item">
-						<a class="nav-link active" id="a1" data-toggle="tab" href="#home" style="color: inherit;">Dados pessoais</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" id="a2" data-toggle="tab" href="#menu1"style="color: inherit;">Formação acadêmica</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" id="a3" data-toggle="tab" href="#menu2" style="color: inherit;">Histórico profssional</a>
-					</li>
-				</ul>
+<form method="post" id="curriculo" action="">
+	<div class="jumbotron container">
+		<h2 class="text-center">Dados pessoais</h1>
+		<div class="row">
+			<div class="col form-group">
+				<label class="control-label" for="telefone">Telefone:</label>
+				<input type="phone" name="telefone" class="form-control" id="telefone" placeholder="(88) 99999-9999" required>
+			</div>
+			<div class="col form-group">
+				<label for="cep" class="control-label has-success">CEP:</label>
+				<input type="text" id="cep" name="cep" class="form-control" placeholder="Ex.: 00000-000" required>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col form-group">
+				<label for="uf">Estado:</label>
+				<select class="form-control uf" name="estado_dados_pessoais" id="uf"></select>
+			</div>
 
-				<!-- Tab panes -->
-				<form method="post" id="curriculo" action="/teste">
-				<div class="tab-content">
-					<div class="tab-pane container active" id="home">
-            <div class="jumbotron" style="margin-top: 1cm; padding: 1cm">
-              <div class="row">
-  						<div class="col form-group">
-    					    <label class="control-label" for="telefone">Telefone:</label>
-    				      <input type="phone" class="form-control" id="telefone" placeholder="(88) 99999-9999">
-    					  </div>
-    						<div class="col form-group">
-    							<label for="cep" class="control-label has-success">CEP:</label>
-    							<input type="text" id="cep" data-minlength="9" onkeypress="$(this).mask('00000-000')" name="cep" class="form-control" placeholder="Ex.: 00000-000">
-    						</div>
-              </div>
-              <div class="row">
-    						<div class="col form-group">
-  								<label for="uf">Estado:</label>
-  								<select class="form-control uf" id="uf"></select>
-  							</div>
-
-  							<div class="col form-group">
-  								<label for="cidade">Cidade:</label>
-  								<select name="cidade" class="form-control cidade" id="cidade"></select>
-  							</div>
-              </div>
-							<div class="form-group">
-                <label for="endereco">Endereço</label>
-                 <input id="endereco" name="endereco" class="form-control" placeholder="Ex.: Rua Mont Alverne" required>
-              </div>
-              <div class="row">
-                <div class="col form-group">
-                    <label for="numero">Número:</label>
-                    <input name="numero" class="form-control" id="numero" placeholder="1234">
-                </div>
-                <div class="col form-group">
-                    <label for="bairro">Bairro:</label>
-                    <input name="bairro" class="form-control" id="bairro" required>
-                </div>
-              </div>
-					  </div>
-          </div>
-  				<div class="tab-pane container fade" id="menu1">
-            <div class="jumbotron" style="margin-top: 1cm; padding: 1cm">
-              <div class="form-group">
-                <label for="instituicao">Instituição de Ensino</label>
-                <input type="text" class="form-control" id="instituicao">
-              </div>
-              <div class="row">
-                <div class="col form-group">
-                    <label for="uf">Estado:</label>
-                    <select class="form-control uf" id="uf1"></select>
-                  </div>
-
-                  <div class="col form-group">
-                    <label for="cidade">Cidade:</label>
-                    <select name="cidade" class="form-control cidade" id="cidade1"></select>
-                  </div>
-              </div>
-              <div class="row">
-                <div class="col form-group">
-                  <label for="curso">Curso</label>
-                  <input type="text" id="curso" class="form-control">
-                </div>
-                <div class="col form-group">
-                  <label for="nivel_curso">Nível</label>
-                  <select id="nivel_curso" class="form-control">
-                    <option selected value="0">Nível de curso</option>
-                    <option value="0">Superior Incompleto</option>
-                    <option value="1">Superior Completo</option>
-                    <option value="2">Técnico</option>
-                  </select>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col form-group">
-                  <label for="data_inicio">Data de Início</label>
-                  <input type="date" id="data_inicio" class="form-control">
-                </div>
-                <div class="col">
-                  <label for="data_termino">Data de Término</label>
-                  <input type="date" id="data_termino" class="form-control">
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" id="cursando" value="1">
-                  <label class="form-check-label" for="cursando">Cursando</label>
-                </div>
-              </div>
-              <hr>
-              <button class="btn btn-primary">Adicionar Curso</button>
-            </div> 
-          
-            <hr>            
-
-            <div class="jumbotron" style="padding: 1cm">
-              <div class="row">
-                <div class=" col form-group">
-                  <label for="idioma">Idioma</label>
-                  <select id="idioma" class="form-control">
-                    <option selected value="">Idioma</option>
-                    <option value="0">Inglês</option>
-                    <option value="1">Espanhol</option>
-                    <option value="2">Francês</option>
-                  </select>
-                </div>
-                <div class="col form-group">
-                  <label for="nivel">Nível</label>
-                  <select id="nivel_fala" class="form-control">
-                    <option selected value="">Nível</option>
-                    <option value="0">Básico</option>
-                    <option value="1">Médio</option>
-                    <option value="2">Avançado</option>
-                  </select>
-                </div>
-              </div>
-              <button class="btn btn-primary">Adicionar Idioma</button>
-            </div>
-					</div>
-					<div class="tab-pane container fade" id="menu2">
-            <div class="jumbotron" style="margin-top: 1cm; margin-bottom: 1cm">
-              <div class="row">
-                <div class="col form-group">
-                  <label for="cargo">Título do cargo:</label>
-                  <input type="text" class="form-control" id="cargo">
-                </div>
-                <div class="col form-group">
-                  <label for="empregador">Empregador:</label>
-                  <input type="text" class="form-control" id="empregador">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col form-group">
-                    <label for="uf">Estado:</label>
-                    <select class="form-control uf" id="uf2"></select>
-                  </div>
-
-                  <div class="col form-group">
-                    <label for="cidade">Cidade:</label>
-                    <select name="cidade" class="form-control cidade" id="cidade2"></select>
-                  </div>
-              </div>
-              <div class="row">
-                <div class="col form-group">
-                  <label for="data_inicio_cargo">Data de Início</label>
-                  <input type="date" id="data_inicio_cargo" class="form-control">
-                </div>
-                <div class="col">
-                  <label for="data_termino_cargo">Data de Término</label>
-                  <input type="date" id="data_termino_cargo" class="form-control">
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" id="trabalhando" value="1">
-                  <label class="form-check-label" for="cursando">Eu trabalho aqui no momento</label>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="resumo_carreira">Resuma sua carreira profissional:</label>
-                <textarea id="resumo_carreira" class="form-control" rows="3"></textarea>
-              </div>
-            </div>
-						<button type="submit" class="btn btn-warning btn-block mt-5">Cadastrar Currículo</button>
-					</div>
-				</div>
-				</form>
+			<div class="col form-group">
+				<label for="cidade">Cidade:</label>
+				<select name="cidade" name="cidade_dados_pessoais" class="form-control cidade" id="cidade"></select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="endereco">Endereço:</label>
+			<input id="endereco" name="endereco" class="form-control" placeholder="Ex.: Rua Mont Alverne" required>
+		</div>
+		<div class="row">
+			<div class="col form-group">
+				<label for="numero">Número:</label>
+				<input name="numero" class="form-control" id="numero" placeholder="1234">
+			</div>
+			<div class="col form-group">
+				<label for="bairro">Bairro:</label>
+				<input name="bairro" class="form-control" id="bairro" required>
 			</div>
 		</div>
 	</div>
-</div>
+
+	<hr/>
+
+	<div class="jumbotron container">
+		<h2 class="text-center">Formação acadêmica</h2>
+		<div class="form-group">
+			<label for="instituicao">Instituição de ensino:</label>
+			<input type="text" class="form-control" id="instituicao">
+		</div>
+		<div class="row">
+			<div class="col form-group">
+				<label for="uf">Estado:</label>
+				<select class="form-control uf" id="uf1"></select>
+			</div>
+
+			<div class="col form-group">
+				<label for="cidade">Cidade:</label>
+				<select name="cidade" class="form-control cidade" id="cidade1"></select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col form-group">
+				<label for="curso">Curso:</label>
+				<input type="text" id="curso" class="form-control">
+			</div>
+			<div class="col form-group">
+				<label for="nivel_curso">Nível:</label>
+				<select id="nivel_curso" class="form-control">
+					<option selected value="0">Nível de curso</option>
+					<option value="0">Superior Incompleto</option>
+					<option value="1">Superior Completo</option>
+					<option value="2">Técnico</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col form-group">
+				<label for="data_inicio">Data de início:</label>
+				<input type="date" id="data_inicio" class="form-control">
+			</div>
+			<div class="col">
+				<label for="data_termino">Data de término:</label>
+				<input type="date" id="data_termino" class="form-control data-termino">
+				<div class="form-check form-check-inline col">
+					<input class="form-check-input" type="checkbox" id="cursando" value="1">
+					<label class="form-check-label" for="cursando">Cursando</label>
+				</div>
+			</div>
+		</div>
+		<button class="btn btn-primary">Adicionar curso</button>
+	</div>
+
+	<hr>
+
+	<div class="jumbotron container">
+		<div class="row">
+			<div class=" col form-group">
+				<label for="idioma">Idioma:</label>
+				<select id="idioma" class="form-control">
+					<option selected value="">Idioma</option>
+					<option value="0">Inglês</option>
+					<option value="1">Espanhol</option>
+					<option value="2">Francês</option>
+				</select>
+			</div>
+			<div class="col form-group">
+				<label for="nivel">Nível:</label>
+				<select id="nivel_fala" class="form-control">
+					<option selected value="">Nível</option>
+					<option value="0">Básico</option>
+					<option value="1">Médio</option>
+					<option value="2">Avançado</option>
+				</select>
+			</div>
+		</div>
+		<button class="btn btn-primary">Adicionar idioma</button>
+	</div>
+
+	<div class="jumbotron container">
+		<div class="row">
+			<div class="col form-group">
+				<label for="cargo">Título do cargo:</label>
+				<input type="text" class="form-control" name="cargo" id="cargo">
+			</div>
+			<div class="col form-group">
+				<label for="empregador">Empregador:</label>
+				<input type="text" class="form-control" id="empregador">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col form-group">
+				<label for="uf">Estado:</label>
+				<select class="form-control uf" id="uf2"></select>
+			</div>
+
+			<div class="col form-group">
+				<label for="cidade">Cidade:</label>
+				<select name="cidade" class="form-control cidade" id="cidade2"></select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col form-group">
+				<label for="data_inicio_cargo">Data de início:</label>
+				<input type="date" id="data_inicio_cargo" class="form-control">
+			</div>
+			<div class="col">
+				<label for="data_termino_cargo">Data de término:</label>
+				<input type="date" id="data_termino_cargo" class="form-control">
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="checkbox" id="trabalhando" value="1">
+					<label class="form-check-label" for="cursando">Eu trabalho aqui no momento</label>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="resumo_carreira">Resuma sua carreira profissional:</label>
+			<textarea id="resumo_carreira" class="form-control" rows="3"></textarea>
+		</div>
+	</div>
+	<button type="submit" class="btn btn-warning float-right">Cadastrar currículo</button>
+	</div>
+</form>
 <script type="text/javascript">
-    $(document).ready(function(){
+$(document).ready(function(){
 
-      $('#a1').tab('show')
+	//Mascaras
+	$('#telefone').mask('(00) 0 0000-0000')
+	$('#cep').mask('00000-000')
 
+	//Validações Cores
+	$.validator.setDefaults({
+		errorClass: 'text-danger',
+		highlight: function(element){
+			$(element)
+			.addClass('is-invalid')
+		},
+		unhighlight: function(element){
+			$(element)
+			.removeClass('is-invalid')
+			//.addClass('is-valid')
+		}
+	})
+	//Validações
+	$('#curriculo').validate({
+		rules:{
+			instituicao: {
+				required: true,
+				minlength: 10
+			},
+			cidade: {required: true},
+			estado_dados_pessoais: {required: true},
+			cargo: {
+				required: true
+			}
+		},
+		submitHandler: function(form){
+			alert('Só Sucesso')
+		}
 
-      $.validator.setDefaults({
-        errorClass: 'text-danger',
-        highlight: function(element){
-          $(element)
-          .addClass('is-invalid')
-        },
-        unhighlight: function(element){
-          $(element)
-          .removeClass('is-invalid')
-          //.addClass('is-valid')
-        }
-      })
+	})
 
-      $('#formulario').validate({
-        rules:{
-          email: {
-            required: true
-          },
-          cidade: {
-            required: true,
-            minlength: 10
-          },
-          pwd: {required: true},
-          endereco: {required: true},
-          gridCheck: {required: true},
-          zip: {required: true},
-          uf: {required: true}
-        },
-        submitHandler: function(form){
-          alert('Sucesso')
-        }
-      })
-    })
-  </script>
+	/*$('.form-check-input').on('click', (e)=>{
+	let a = e.target.closest('.row')
+	console.log(a.find('.data_termino'))
+})*/
+$('.form-check-input').click(function(){
+	let selection = $(this).closest('.row').find('input.data-termino')
+	if(selection.attr('disabled')){
+		selection.removeAttr('disabled')
+	}else{
+		selection.val('')
+		selection.attr('disabled','disabled')
+	}
+})
+})
+</script>

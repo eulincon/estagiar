@@ -19,7 +19,7 @@ $(document).ready(function(){
       $.each(data, function (key, val) {
         if(val.nome == str) {
           $.each(val.cidades, function (key_city, val_city) {
-            options_cidades += '<option value="' + val_city + '">' + val_city + '</option>'              
+            options_cidades += '<option value="' + val_city + '">' + val_city + '</option>'
           })
         }
       })
@@ -45,7 +45,7 @@ $(document).ready(function(){
             $.each(data, function (key, val) {
               if(val.nome == str) {
                 $.each(val.cidades, function (key_city, val_city) {
-                  options_cidades += '<option value="' + val_city + '">' + val_city + '</option>'              
+                  options_cidades += '<option value="' + val_city + '">' + val_city + '</option>'
                 })
               }
             })
