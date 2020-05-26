@@ -1,3 +1,4 @@
+<script src="js/curriculo.js"></script>
 <form method="post" id="curriculo" action="">
 	<div class="jumbotron container">
 		<h2 class="text-center">Dados pessoais</h1>
@@ -156,60 +157,8 @@
 			<textarea id="resumo_carreira" class="form-control" rows="3"></textarea>
 		</div>
 	</div>
-	<button type="submit" class="btn btn-warning float-right">Cadastrar currículo</button>
+	<div class="container">
+		<button type="submit" class="btn btn-warning float-right">Cadastrar currículo</button>
+	</div>
 	</div>
 </form>
-<script type="text/javascript">
-$(document).ready(function(){
-
-	//Mascaras
-	$('#telefone').mask('(00) 0 0000-0000')
-	$('#cep').mask('00000-000')
-
-	//Validações Cores
-	$.validator.setDefaults({
-		errorClass: 'text-danger',
-		highlight: function(element){
-			$(element)
-			.addClass('is-invalid')
-		},
-		unhighlight: function(element){
-			$(element)
-			.removeClass('is-invalid')
-			//.addClass('is-valid')
-		}
-	})
-	//Validações
-	$('#curriculo').validate({
-		rules:{
-			instituicao: {
-				required: true,
-				minlength: 10
-			},
-			cidade: {required: true},
-			estado_dados_pessoais: {required: true},
-			cargo: {
-				required: true
-			}
-		},
-		submitHandler: function(form){
-			alert('Só Sucesso')
-		}
-
-	})
-
-	/*$('.form-check-input').on('click', (e)=>{
-	let a = e.target.closest('.row')
-	console.log(a.find('.data_termino'))
-})*/
-$('.form-check-input').click(function(){
-	let selection = $(this).closest('.row').find('input.data-termino')
-	if(selection.attr('disabled')){
-		selection.removeAttr('disabled')
-	}else{
-		selection.val('')
-		selection.attr('disabled','disabled')
-	}
-})
-})
-</script>
